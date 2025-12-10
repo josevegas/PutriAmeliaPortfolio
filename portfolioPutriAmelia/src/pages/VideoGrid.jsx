@@ -1,5 +1,5 @@
 function VideoGrid() {
-    const videoIds = ['ID_DE_YOUTUBE1', 'ID_DE_YOUTUBE2'];
+    const videoIds = ['ZukboSBHZJk?si=qfhNWwxKGEGAz7Zz', 'gVdvwKKDTgc?si=oRTbfyLLK2_3JOIi'];
     return (
         <div className="video-container">
             {videoIds.map(id => (
