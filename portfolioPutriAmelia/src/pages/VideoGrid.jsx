@@ -18,3 +18,5 @@ function VideoGrid() {
         </div>
     );
 }
+
+export default VideoGrid

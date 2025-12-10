@@ -1,4 +1,4 @@
-import { photoSessions } from './data/photos';
+import { photoSessions } from '../data/photos';
 
 function Gallery() {
     return (
@@ -12,3 +12,5 @@ function Gallery() {
         </div>
     )
 }
+
+export default Gallery
