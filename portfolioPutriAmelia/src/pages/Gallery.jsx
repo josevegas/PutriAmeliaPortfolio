@@ -1,4 +1,4 @@
-import { photoSessions } from '/data/photos';
+import { photoSessions } from './data/photos';
 
 function Gallery() {
     return (
@@ -8,5 +8,7 @@ function Gallery() {
                     <img src={photo.src} alt={photo.title} />
                     {/* Opcional: Mostrar título o tags al hacer hover */}
                 </div>
-            )
+            ))}
+        </div>
+    )
 }
