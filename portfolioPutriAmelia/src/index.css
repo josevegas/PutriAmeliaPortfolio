@@ -1,5 +1,12 @@
+/* Reset básico para consistencia */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /*font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -10,24 +17,39 @@
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;*/
+  /* Usa una fuente elegante y moderna (ej: 'Montserrat', 'Poppins', 'Playfair Display') */
+  --font-primary: 'Montserrat', sans-serif;
+  --color-primary: #1a1a1a;
+  /* Negro suave */
+  --color-secondary: #f4f4f4;
+  /* Gris claro para fondos */
+  --transition-speed: 0.3s;
 }
 
 a {
-  font-weight: 500;
+  /*font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: inherit;*/
+  text-decoration: none;
+  color: var(--color-primary);
 }
+
 a:hover {
   color: #535bf2;
 }
 
 body {
-  margin: 0;
+  /*margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh;*/
+  font-family: var(--font-primary);
+  color: var(--color-primary);
+  background-color: white;
+  /* Fondo blanco puro */
+  line-height: 1.6;
 }
 
 h1 {
@@ -46,9 +68,11 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button:hover {
   border-color: #646cff;
 }
+
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -59,10 +83,97 @@ button:focus-visible {
     color: #213547;
     background-color: #ffffff;
   }
+
   a:hover {
     color: #747bff;
   }
+
   button {
     background-color: #f9f9f9;
   }
+}
+
+/*HEADER*/
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  position: sticky;
+  /* Fija el header al hacer scroll */
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  /* Blanco semi-transparente */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo a {
+  font-size: 1.5rem;
+  font-weight: 700;
+  /*Negrita*/
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 30px;
+}
+
+nav ul li a {
+  font-size: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  /*Efecto de línea inferior al hacer hover*/
+}
+
+nav ul li a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  display: block;
+  margin-top: 5px;
+  right: 0;
+  background: var(--color-primary);
+  transition: width var(--transition-speed) ease;
+}
+
+nav ul li a:hover {
+  width: 100%;
+  left: 0;
+  background: var(--color-primary);
+}
+
+/*GALLERY*/
+.gallery-grid {
+  display: grid;
+  /*cuadricula adaptable: minimo 300px*/
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 15px;
+  /*Espacio entre las imágenes*/
+  padding: 50px 40px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /*Verificar que no se distorcione*/
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
 }
